@@ -1,28 +1,21 @@
-import { css } from '@emotion/react'
-import logo from './logo.svg'
-import './App.css'
-
-const container = css`
-  background-color: pink;
-`
+import Button from './components/shared/Button'
+import Text from './components/shared/Text'
 
 function App() {
   return (
-    <div className="App" css={container}>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Text
+        typography="t1"
+        color="black"
+        display="block"
+        textAlign="center"
+        fontWeight="bold"
+      >
+        Hello World
+      </Text>
+      <Button color="primary" size="small">
+        Button
+      </Button>
     </div>
   )
 }
