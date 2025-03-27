@@ -1,5 +1,5 @@
 import { css } from '@emotion/react'
-import { colors } from './colorPaletts'
+import { colors } from './colorPalette'
 
 export const buttonColorMap = {
   primary: css`

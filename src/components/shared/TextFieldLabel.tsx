@@ -6,7 +6,6 @@ import React, {
 } from 'react'
 import Text from './Text'
 import Input from './Input'
-import { on } from 'events'
 
 interface TextFieldLabel extends InputHTMLAttributes<HTMLInputElement> {
   label?: React.ReactNode
@@ -16,7 +15,7 @@ interface TextFieldLabel extends InputHTMLAttributes<HTMLInputElement> {
 
 const TextField = forwardRef<HTMLInputElement, TextFieldLabel>(
   function TextField(
-    { label, hasError, onFocus, onBlur, helpMessage, ...props },
+    { label, hasError, helpMessage, onFocus, onBlur, ...props },
     ref,
   ) {
     const [foucused, setFocused] = useState(false)
