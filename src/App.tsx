@@ -1,27 +1,14 @@
-import Button from './components/shared/Button'
-import Input from './components/shared/Input'
-import Text from './components/shared/Text'
-import TextField from './components/shared/TextFieldLabel'
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import HomePage from './pages/Home'
+import TestPage from './pages/Text'
 function App() {
   return (
-    <div>
-      <Text
-        typography="t1"
-        color="black"
-        display="block"
-        textAlign="center"
-        fontWeight="bold"
-      >
-        Hello World
-      </Text>
-      <Button color="primary" size="small">
-        Button
-      </Button>
-
-      <Input />
-      <TextField label="Name" hasError={true} />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" Component={HomePage} />
+        <Route path="/test" Component={TestPage} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
