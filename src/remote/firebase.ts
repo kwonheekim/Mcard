@@ -10,6 +10,7 @@ const {
   REACT_APP_MESSAGING_SENDER_ID,
   REACT_APP_APP_ID,
   REACT_APP_MEASUREMENT_ID,
+  // eslint-disable-next-line no-undef
 } = process.env
 
 const firebaseConfig = {

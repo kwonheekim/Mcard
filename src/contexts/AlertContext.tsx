@@ -30,10 +30,12 @@ const defaultValues: AlertProps = {
 export function AlertContextProvider({
   children,
 }: {
+  // eslint-disable-next-line no-undef
   children: React.ReactNode
 }) {
   const [alertState, setAlertState] = useState(defaultValues)
 
+  // eslint-disable-next-line no-undef
   const $portal_root = document.getElementById('root-portal')
 
   const close = useCallback(() => {

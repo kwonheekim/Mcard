@@ -147,4 +147,9 @@ export default css`
 
     line-height: normal;
   }
+
+  a {
+    text-decoration: inherit;
+    color: inherit;
+  }
 `
