@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 import { colors } from '@/styles/colorPalette'
-import { css } from '@emotion/react'
+import { css, keyframes } from '@emotion/react'
 import styled from '@emotion/styled'
 import { createPortal } from 'react-dom'
 import Button from './Button'
@@ -8,22 +8,39 @@ import Button from './Button'
 interface FixedBottomButtonProps {
   label: string
   onClick: () => void
+  disabled?: boolean
 }
 
-function FixedBottonButton({ label, onClick }: FixedBottomButtonProps) {
+function FixedBottonButton({
+  label,
+  onClick,
+  disabled,
+}: FixedBottomButtonProps) {
   const $portalRoot = document.getElementById('root-portal')
 
   if (!$portalRoot) return null
 
   return createPortal(
     <Container>
-      <Button size="medium" full css={buttonStyles} onClick={() => onClick()}>
+      <Button
+        size="medium"
+        disabled={disabled}
+        full
+        css={buttonStyles}
+        onClick={() => onClick()}
+      >
         {label}
       </Button>
     </Container>,
     $portalRoot,
   )
 }
+
+const slideup = keyframes`
+    to {
+        transform: translateY(0);
+    }
+`
 
 const Container = styled.div`
   position: fixed;
@@ -32,6 +49,8 @@ const Container = styled.div`
   bottom: 0;
   background-color: ${colors.white};
   padding: 20px 10px 8px;
+  transform: translateY(100%);
+  animation: ${slideup} 0.5s ease-in-out forwards;
 `
 
 const buttonStyles = css`

@@ -31,3 +31,6 @@
 - FixedBottomButton 구현
 
 2. 애니메이션
+
+- FixedBottomButton 애니메이션
+- framer-motion 애니메이션 사용
