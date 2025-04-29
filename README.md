@@ -34,3 +34,16 @@
 
 - FixedBottomButton 애니메이션
 - framer-motion 애니메이션 사용
+- ScrollToTop 컴포넌트 생성
+
+3. 회원가입 구현 (설계, 폼 바인딩)
+
+- Navbar 구현
+- form 구현
+- Signin page
+- Signup page
+
+4. 회원가입 구현
+
+- 폼 value
+- 폼 validator 설정
