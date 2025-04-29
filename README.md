@@ -20,6 +20,14 @@
 * react-query page limit 활용
 * react-infinite-scroll-component 활용 (스트롤시 데이터 로드)
 
+## 2025. 4/ 29일 작업
+
 - 카드 상세 페이지 구현
 
-*
+1. 설계
+
+- Badge 컴포넌트 구현
+- page/Card 상세페이지 생성
+- FixedBottomButton 구현
+
+2. 애니메이션
