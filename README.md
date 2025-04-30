@@ -46,4 +46,20 @@
 4. 회원가입 구현
 
 - 폼 value
-- 폼 validator 설정
+- 폼 validator 설정 (유효성 검사)
+- firebase auth 설정 및 데이터 연동
+- firebase db 저장
+
+## 2025. 4/ 30일 작업
+
+1. 로그인 구현 (설계, 구현)
+
+- recoil 설치 (전역 상태관리)
+- signin Form 컴포넌트 구현
+- 이벤트 처리 및 유효성 검사 추가
+- submit 연결 테스트
+- components auth 추가
+- AuthGuard 인증 처리 작업
+- recoil user atom 생성 후 저장
+- useUser hook 생성
+- 로그아웃 설계 구현

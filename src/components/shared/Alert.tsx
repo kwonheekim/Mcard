@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { colors } from '@/styles/colorPalette'
 import styled from '@emotion/styled'
 import Text from './Text'
