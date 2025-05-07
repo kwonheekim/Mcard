@@ -5,15 +5,34 @@ import Text from '@/components/shared/Text'
 import Top from '@/components/shared/Top'
 import { getCard } from '@/remote/card'
 import { useQuery } from 'react-query'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { css } from '@emotion/react'
 import { motion } from 'framer-motion'
+import { useCallback } from 'react'
+import useUser from '@/hooks/useUser'
+import { useAlertContext } from '@/contexts/AlertContext'
 
 function CardPage() {
+  const navigate = useNavigate()
+  const user = useUser()
+  const { open } = useAlertContext()
   const { id = '' } = useParams()
   const { data } = useQuery(['card', id], () => getCard(id), {
     enabled: id !== '',
   })
+
+  const movetoApply = useCallback(() => {
+    if (user == null) {
+      open({
+        title: '로그인이 필요한 기능입니다.',
+        onButtonClick: () => {
+          navigate('/signin')
+        },
+      })
+      return
+    }
+    navigate(`/apply/${id}`)
+  }, [user, id, open, navigate])
 
   if (data == null) {
     return null
@@ -65,7 +84,7 @@ function CardPage() {
           <Text typography="t7">{removeHtmlTags(promotion?.terms || '')}</Text>
         </Flex>
       ) : null}
-      <FixedBottonButton label="신청하기" onClick={() => {}} />
+      <FixedBottonButton label="신청하기" onClick={movetoApply} />
     </div>
   )
 }

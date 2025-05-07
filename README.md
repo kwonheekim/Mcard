@@ -63,3 +63,11 @@
 - recoil user atom 생성 후 저장
 - useUser hook 생성
 - 로그아웃 설계 구현
+
+2. 카드 신청 구현 (설계)
+
+- PrivateRoute 유저의정보를 받아서 어떤 페이지로 이동할지 지정
+- router apply 상세 페이지 연결
+- 약관동의, 카드 정보, 기본정보 컴포넌트 생성
+- ApplyPage step 별 매칭
+- 약관 동의 (Terms) 구현
