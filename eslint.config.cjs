@@ -1,9 +1,9 @@
 // eslint.config.cjs
-const js = require('@eslint/js');
-const react = require('eslint-plugin-react');
-const prettier = require('eslint-plugin-prettier');
-const tsPlugin = require('@typescript-eslint/eslint-plugin');
-const tsParser = require('@typescript-eslint/parser');
+const js = require('@eslint/js')
+const react = require('eslint-plugin-react')
+const prettier = require('eslint-plugin-prettier')
+const tsPlugin = require('@typescript-eslint/eslint-plugin')
+const tsParser = require('@typescript-eslint/parser')
 
 /** @type {import("eslint").Linter.FlatConfig[]} */
 module.exports = [
@@ -36,4 +36,4 @@ module.exports = [
       },
     },
   },
-];
+]

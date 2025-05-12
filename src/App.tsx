@@ -7,7 +7,8 @@ import SignupPage from './pages/Signup'
 import SigninPage from './pages/Signin'
 import Navbar from './components/shared/Navbar'
 import PrivateRoute from './components/auth/PrivateRoute'
-import Apply from './pages/Apply'
+import ApplyPage from './pages/Apply'
+import ApplyDone from './pages/ApplyDone'
 function App() {
   return (
     <BrowserRouter>
@@ -23,7 +24,15 @@ function App() {
           path="/apply/:id"
           element={
             <PrivateRoute>
-              <Apply />
+              <ApplyPage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/apply/done"
+          element={
+            <PrivateRoute>
+              <ApplyDone />
             </PrivateRoute>
           }
         />
