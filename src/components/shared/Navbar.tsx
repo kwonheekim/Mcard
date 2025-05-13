@@ -1,28 +1,31 @@
-import { Link, useLocation } from 'react-router-dom'
-import Flex from './Flex'
-import Button from './Button'
 import { css } from '@emotion/react'
-import { colors } from '@/styles/colorPalette'
-import useUser from '@/hooks/useUser'
+import { Link, useLocation } from 'react-router-dom'
+
 import { useCallback } from 'react'
-import { signOut } from 'firebase/auth'
-import { auth } from '@/remote/firebase'
+
+import { colors } from '@styles/colorPalette'
+import Flex from '@shared/Flex'
+import Button from '@shared/Button'
+
+import MyImage from '@components/my/MyImage'
+import useUser from '@/hooks/useUser'
 
 function Navbar() {
   const location = useLocation()
   const showSignButton =
-    ['/signup', '/signup'].includes(location.pathname) === false
+    ['/signup', '/signin'].includes(location.pathname) === false
 
   const user = useUser()
 
-  const handleLogout = useCallback(() => {
-    signOut(auth)
-  }, [])
-
   const renderButton = useCallback(() => {
     if (user != null) {
-      return <Button onClick={handleLogout}>로그아웃</Button>
+      return (
+        <Link to="/my">
+          <MyImage size={40} />
+        </Link>
+      )
     }
+
     if (showSignButton) {
       return (
         <Link to="/signin">
@@ -35,7 +38,7 @@ function Navbar() {
   }, [user, showSignButton])
 
   return (
-    <Flex justify="space-between" css={navbarContainerStyles} align="center">
+    <Flex justify="space-between" align="center" css={navbarContainerStyles}>
       <Link to="/">홈</Link>
       {renderButton()}
     </Flex>
